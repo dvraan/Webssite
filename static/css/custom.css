@@ -45,12 +45,13 @@ h1 {
 }
 
 .code-comparison {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .code-block {
-    width: 30%;
+    width: 100%;
 }
 
 pre[class*=language-], code[class*=language-] {

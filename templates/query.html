@@ -2,16 +2,16 @@
 
 {% block content %}
 <h1>{{ query.title }}</h1>
-<div class="query-container">
-    <div class="query-section">
-        <h2>DAX</h2>
-        <pre><code class="language-dax">{{ query.dax }}</code></pre>
-    </div>
-    <div class="query-section">
+<div class="code-comparison">
+    <div class="code-block">
         <h2>SQL</h2>
         <pre><code class="language-sql">{{ query.sql }}</code></pre>
     </div>
-    <div class="query-section">
+    <div class="code-block">
+        <h2>DAX</h2>
+        <pre><code class="language-dax">{{ query.dax }}</code></pre>
+    </div>
+    <div class="code-block">
         <h2>Pandas</h2>
         <pre><code class="language-python">{{ query.pandas }}</code></pre>
     </div>
