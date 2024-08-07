@@ -1,0 +1,17 @@
+{
+    "queries": [
+      {
+        "title": "Filter Sales with Quantity > 100",
+        "dax": "EVALUATE\nFILTER (\n    Sales,\n    Sales[Quantity] > 100\n)",
+        "sql": "SELECT *\nFROM Sales\nWHERE Quantity > 100;",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\nfiltered_sales = sales[sales['Quantity'] > 100]"
+      },
+      {
+        "title": "Calculate Total Sales",
+        "dax": "EVALUATE\nSUMMARIZE (\n    Sales,\n    ADDCOLUMNS (\n        SUM ( Sales[Amount] )\n    )\n)",
+        "sql": "SELECT SUM(Amount)\nFROM Sales;",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\ntotal_sales = sales['Amount'].sum()"
+      }
+    ]
+  }
+  
