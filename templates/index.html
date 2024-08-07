@@ -1,39 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn DAX, SQL, and Pandas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/prism.css') }}">
-    <script src="{{ url_for('static', filename='js/prism.js') }}"></script>
-</head>
-<body>
-    <div class="container">
-        <h1>Learn DAX, SQL, and Pandas</h1>
-        <h2>{{ query.title }}</h2>
-        <div class="code-comparison">
-            <div class="code-block">
-                <h3>DAX</h3>
-                <pre><code class="language-dax">{{ query.dax }}</code></pre>
-            </div>
-            <div class="code-block">
-                <h3>SQL</h3>
-                <pre><code class="language-sql">{{ query.sql }}</code></pre>
-            </div>
-            <div class="code-block">
-                <h3>Pandas</h3>
-                <pre><code class="language-python">{{ query.pandas }}</code></pre>
-            </div>
-        </div>
-        <div class="navigation">
-            {% if query_index > 0 %}
-                <a href="/?query={{ query_index - 1 }}">Previous</a>
-            {% endif %}
-            {% if query_index < total_queries - 1 %}
-                <a href="/?query={{ query_index + 1 }}">Next</a>
-            {% endif %}
-        </div>
-    </div>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to Learn DAX, SQL, and Pandas</h1>
+
+
+{% endblock %}

@@ -1,16 +1,40 @@
 {
     "queries": [
       {
-        "title": "Filter Sales with Quantity > 100",
-        "dax": "EVALUATE\nFILTER (\n    Sales,\n    Sales[Quantity] > 100\n)",
-        "sql": "SELECT *\nFROM Sales\nWHERE Quantity > 100;",
-        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\nfiltered_sales = sales[sales['Quantity'] > 100]"
+        "title": "DAX: Calculate Total Sales",
+        "dax": "EVALUATE\nSUMMARIZE (\n    Sales,\n    ADDCOLUMNS (\n        Sales[Product],\n        \"Total Sales\", SUM ( Sales[Amount] )\n    )\n)",
+        "sql": "SELECT Product, SUM(Amount) AS 'Total Sales'\nFROM Sales\nGROUP BY Product;",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\ntotal_sales = sales.groupby('Product')['Amount'].sum().reset_index()\nprint(total_sales)"
       },
       {
-        "title": "Calculate Total Sales",
-        "dax": "EVALUATE\nSUMMARIZE (\n    Sales,\n    ADDCOLUMNS (\n        SUM ( Sales[Amount] )\n    )\n)",
-        "sql": "SELECT SUM(Amount)\nFROM Sales;",
-        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\ntotal_sales = sales['Amount'].sum()"
+        "title": "DAX: Filter Sales with Quantity > 100",
+        "dax": "EVALUATE\nFILTER (\n    Sales,\n    Sales[Quantity] > 100\n)",
+        "sql": "SELECT *\nFROM Sales\nWHERE Quantity > 100;",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\nfiltered_sales = sales[sales['Quantity'] > 100]\nprint(filtered_sales)"
+      },
+      {
+        "title": "SQL: Calculate Average Price",
+        "dax": "EVALUATE\nADDCOLUMNS (\n    Sales,\n    \"Average Price\", AVERAGE ( Sales[Price] )\n)",
+        "sql": "SELECT AVG(Price) AS 'Average Price'\nFROM Sales;",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\naverage_price = sales['Price'].mean()\nprint('Average Price:', average_price)"
+      },
+      {
+        "title": "SQL: List Distinct Products",
+        "dax": "EVALUATE\nSUMMARIZE (\n    Sales,\n    Sales[Product]\n)",
+        "sql": "SELECT DISTINCT Product\nFROM Sales;",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\ndistinct_products = sales['Product'].unique()\nprint(distinct_products)"
+      },
+      {
+        "title": "Pandas: Total Sales by Region",
+        "dax": "EVALUATE\nSUMMARIZE (\n    Sales,\n    Sales[Region],\n    \"Total Sales\", SUM ( Sales[Amount] )\n)",
+        "sql": "SELECT Region, SUM(Amount) AS 'Total Sales'\nFROM Sales\nGROUP BY Region;",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\ntotal_sales_by_region = sales.groupby('Region')['Amount'].sum().reset_index()\nprint(total_sales_by_region)"
+      },
+      {
+        "title": "Pandas: Filter Sales by Date",
+        "dax": "EVALUATE\nFILTER (\n    Sales,\n    Sales[Date] > DATE(2023, 1, 1)\n)",
+        "sql": "SELECT *\nFROM Sales\nWHERE Date > '2023-01-01';",
+        "pandas": "import pandas as pd\nsales = pd.read_csv('sales.csv')\nfiltered_sales_by_date = sales[sales['Date'] > '2023-01-01']\nprint(filtered_sales_by_date)"
       }
     ]
   }

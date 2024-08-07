@@ -4,6 +4,35 @@ body {
     color: #333;
 }
 
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -13,11 +42,6 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 40px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .code-comparison {
@@ -49,6 +73,31 @@ pre[class*=language-] {
     margin: .5em 0;
     overflow: auto;
     background: #2d2d2d;
+}
+
+.function-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.function-item {
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.function-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.function-item a:hover {
+    text-decoration: underline;
 }
 
 .navigation {

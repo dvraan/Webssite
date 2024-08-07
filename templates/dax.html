@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ title }} Functions</h1>
+<div class="function-list">
+    {% for function in functions %}
+        <div class="function-item">
+            <a href="{{ url_for('query', query=function) }}">{{ function }}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
