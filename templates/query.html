@@ -31,6 +31,14 @@
     </div>
 </div>
 
+{% if query.youtube_url and query.thumbnail %}
+<div class="youtube-thumbnail">
+    <a href="{{ query.youtube_url }}" target="_blank">
+        <img src="{{ url_for('static', filename=query.thumbnail) }}" alt="YouTube Video">
+    </a>
+</div>
+{% endif %}
+
 <div class="navigation">
     {% if prev_query %}
         <a href="{{ url_for('query', query=prev_query) }}" class="btn btn-primary">Previous</a>

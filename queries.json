@@ -10,7 +10,9 @@
         ["Product A", "5000"],
         ["Product B", "3000"],
         ["Product C", "2000"]
-      ]
+      ],
+      "youtube_url":"https://www.youtube.com/watch?v=XrR0MPShJIc",
+      "thumbnail":"images/Muruga.jpg"
     },
     {
       "title": "DAX: Filter Sales with Quantity > 100",
@@ -21,7 +23,9 @@
         ["Product", "Quantity", "Amount"],
         ["Product A", "150", "7500"],
         ["Product B", "120", "3600"]
-      ]
+      ],
+      "youtube_url":"https://www.youtube.com/watch?v=XrR0MPShJIc",
+      "thumbnail":"images/Muruga.jpg"
     },
     {
       "title": "SQL: Calculate Average Price",
@@ -31,7 +35,9 @@
       "output": [
         ["Average Price"],
         ["25.50"]
-      ]
+      ],
+      "youtube_url":"https://www.youtube.com/watch?v=XrR0MPShJIc",
+      "thumbnail":"images/Muruga.jpg"
     },
     {
       "title": "SQL: List Distinct Products",
@@ -43,7 +49,9 @@
         ["Product A"],
         ["Product B"],
         ["Product C"]
-      ]
+      ],
+      "youtube_url":"https://www.youtube.com/watch?v=XrR0MPShJIc",
+      "thumbnail":"images/Muruga.jpg"
     },
     {
       "title": "Pandas: Total Sales by Region",
@@ -55,7 +63,9 @@
         ["North", "8000"],
         ["South", "7000"],
         ["East", "6000"]
-      ]
+      ],
+      "youtube_url":"https://www.youtube.com/watch?v=XrR0MPShJIc",
+      "thumbnail":"images/Muruga.jpg"
     },
     {
       "title": "Pandas: Filter Sales by Date",
@@ -66,7 +76,9 @@
         ["Product", "Date", "Amount"],
         ["Product A", "2023-01-15", "1500"],
         ["Product B", "2023-02-20", "2000"]
-      ]
+      ],
+      "youtube_url":"https://www.youtube.com/watch?v=XrR0MPShJIc",
+      "thumbnail":"images/Muruga.jpg"
     }
   ]
 }
