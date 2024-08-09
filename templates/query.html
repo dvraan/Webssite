@@ -11,9 +11,23 @@
         <h2>DAX</h2>
         <pre><code class="language-dax">{{ query.dax }}</code></pre>
     </div>
+</div>
+<div class="code-comparison">
     <div class="code-block">
         <h2>Pandas</h2>
         <pre><code class="language-python">{{ query.pandas }}</code></pre>
+    </div>
+    <div class="output-block">
+        <h2>Output</h2>
+        <table class="output-table">
+            {% for row in query.output %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </div>
 

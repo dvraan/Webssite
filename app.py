@@ -1,11 +1,7 @@
 from flask import Flask, render_template, request, jsonify, url_for, redirect
 import json
-from models import db, Comment, init_db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comments.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-init_db(app)
 
 # Load queries from JSON file
 with open('queries.json', 'r') as file:
@@ -62,8 +58,6 @@ def query():
 @app.route('/queries')
 def get_queries():
     return jsonify(queries)
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)

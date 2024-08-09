@@ -1,9 +1,11 @@
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
 }
 
+/* Navigation Bar Styling */
 nav {
     background-color: #333;
     color: #fff;
@@ -33,17 +35,14 @@ nav ul li a:hover {
     background-color: #111;
 }
 
+/* Container Styling */
 .container {
     width: 90%;
     margin: 0 auto;
     padding: 20px;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
+/* Code Block Styling */
 .code-comparison {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -76,31 +75,37 @@ pre[class*=language-] {
     background: #2d2d2d;
 }
 
-.function-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Output Table Styling to Match Code Block */
+.output-table {
+    background-color: #2d2d2d;
+    color: #fff;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
-.function-item {
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.output-table th, .output-table td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: left;
+    color: #fff;
 }
 
-.function-item a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
+.output-table th {
+    background-color: #333;
+    color: #fff;
 }
 
-.function-item a:hover {
-    text-decoration: underline;
+.output-table tr:nth-child(even) {
+    background-color: #3b3b3b;
 }
 
+.output-table tr:hover {
+    background-color: #444;
+}
+
+/* Navigation Styling */
 .navigation {
     text-align: center;
     margin-top: 20px;
