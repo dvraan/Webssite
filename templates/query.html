@@ -31,13 +31,22 @@
     </div>
 </div>
 
-{% if query.youtube_url and query.thumbnail %}
-<div class="youtube-thumbnail">
-    <a href="{{ query.youtube_url }}" target="_blank">
-        <img src="{{ url_for('static', filename=query.thumbnail) }}" alt="YouTube Video">
-    </a>
+<div class="youtube-and-comment">
+    {% if query.youtube_url and query.thumbnail %}
+    <div class="youtube-thumbnail">
+        <h2>YouTube Video Link</h2>
+        <a href="{{ query.youtube_url }}" target="_blank">
+            <img src="{{ url_for('static', filename=query.thumbnail) }}" alt="YouTube Video">
+        </a>
+    </div>
+    {% endif %}
+    <div class="comment-section">
+        <h3>Leave a Comment</h3>
+        <textarea class="comment-box" rows="4" placeholder="Write your comment here..."></textarea>
+        <br>
+        <button class="submit-button">Submit</button>
+    </div>
 </div>
-{% endif %}
 
 <div class="navigation">
     {% if prev_query %}

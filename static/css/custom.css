@@ -120,20 +120,54 @@ pre[class*=language-] {
 .navigation a:hover {
     text-decoration: underline;
 }
+/* Other styles remain unchanged */
+
+/* Layout for YouTube Thumbnail and Comment Section */
+.youtube-and-comment {
+    display: flex;
+    flex-direction: row;  /* Arrange items in a row */
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
 .youtube-thumbnail {
-    text-align: center;
-    margin-bottom: 20px;
+    flex: 1;
+    max-width: 48%;
 }
 
 .youtube-thumbnail img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ccc;
+    width: 100%;
     border-radius: 5px;
-    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
 }
 
-.youtube-thumbnail img:hover {
-    transform: scale(1.05);
+.comment-section {
+    flex: 1;
+    max-width: 48%;
+    text-align: left;
+}
+
+.comment-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
 }
